@@ -21,6 +21,7 @@ public class BoardRepositoryAdapter implements BoardRepository {
     @Transactional
     public Board save(Board board) {
         BoardJpaEntity saved = repo.save(BoardJpaEntity.from(board));
+        // CreateBoardUseCase에서 getId를 사용하기 위해 도메인 return
         return saved.toDomain();
     }
 

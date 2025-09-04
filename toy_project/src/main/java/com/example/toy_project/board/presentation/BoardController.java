@@ -38,7 +38,7 @@ public class BoardController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id,
                                        @RequestParam Long requesterId) {
         deleteBoardUseCase.handle(id, requesterId);
